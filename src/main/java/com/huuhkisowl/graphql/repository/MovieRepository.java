@@ -1,10 +1,10 @@
-package com.huuhkisowl.graphql.repositories;
+package com.huuhkisowl.graphql.repository;
 
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
 
-import com.huuhkisowl.graphql.models.Movie;
+import com.huuhkisowl.graphql.model.Movie;
 
 public interface MovieRepository extends MongoRepository<Movie, String> {
 	

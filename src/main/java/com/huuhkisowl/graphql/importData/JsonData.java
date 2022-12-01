@@ -12,8 +12,8 @@ import org.springframework.stereotype.Component;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
-import com.huuhkisowl.graphql.models.*;
-import com.huuhkisowl.graphql.repositories.*;
+import com.huuhkisowl.graphql.model.*;
+import com.huuhkisowl.graphql.repository.*;
 
 import jakarta.annotation.PostConstruct;
 

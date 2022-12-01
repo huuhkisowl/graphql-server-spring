@@ -1,10 +1,10 @@
-package com.huuhkisowl.graphql.models;
+package com.huuhkisowl.graphql.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "directors")
-public class Director {
+@Document(collection = "actors")
+public class Actor {
 	
 	@Id
 	private String id;
@@ -12,7 +12,10 @@ public class Director {
 	private String firstName;
 	private String lastName;
 	
-	public Director(String firstName, String lastName) {
+	public Actor() {
+	}
+	
+	public Actor(String firstName, String lastName) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 	}
@@ -38,7 +41,7 @@ public class Director {
 	
 	@Override
 	public String toString() {
-		return "Director [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 	
 }

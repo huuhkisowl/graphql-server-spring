@@ -1,9 +1,9 @@
-package com.huuhkisowl.graphql.repositories;
+package com.huuhkisowl.graphql.repository;
 
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-import com.huuhkisowl.graphql.models.Director;
+import com.huuhkisowl.graphql.model.Director;
 
 public interface DirectorRepository extends MongoRepository<Director, String> {
 	

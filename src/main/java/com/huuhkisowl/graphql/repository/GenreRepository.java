@@ -1,9 +1,9 @@
-package com.huuhkisowl.graphql.repositories;
+package com.huuhkisowl.graphql.repository;
 
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
-import com.huuhkisowl.graphql.models.Genre;
+import com.huuhkisowl.graphql.model.Genre;
 
 public interface GenreRepository extends MongoRepository<Genre, String> {
 	

@@ -1,4 +1,4 @@
-package com.huuhkisowl.graphql.models;
+package com.huuhkisowl.graphql.model;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -10,6 +10,9 @@ public class Genre {
 	private String id;
 	
 	private String genre;
+	
+	public Genre() {
+	}
 	
 	public Genre(String genre) {
 		this.genre = genre;

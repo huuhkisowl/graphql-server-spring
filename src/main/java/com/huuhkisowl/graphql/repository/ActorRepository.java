@@ -1,10 +1,9 @@
-package com.huuhkisowl.graphql.repositories;
+package com.huuhkisowl.graphql.repository;
 
 import java.util.List;
 
-import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
-import com.huuhkisowl.graphql.models.Actor;
+import com.huuhkisowl.graphql.model.Actor;
 
 public interface ActorRepository extends MongoRepository<Actor, String> {
 

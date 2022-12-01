@@ -1,0 +1,41 @@
+
+type Movie {
+	id: String
+	name: String
+	year: Int
+	genres: [Genres]
+	ageLimit: Int
+	rating: Int
+	actors: [Actors]
+	director: Director
+	synopsis: String
+}
+
+type Actors {
+  	id: String
+  	firstName: String
+  	lastName: String 
+}
+
+type Director {
+	id: String
+  	firstName: String
+  	lastName: String 
+}
+
+type Genres {
+  	id: String
+  	genre: String
+}
+
+type Query {
+	movies: [Movie]
+	movie(term: String!): [Movie]
+	actors: [Actors]
+	directors: [Director]
+	genres: [Genres]!
+}
+
+type Mutation {
+	createMovie(name: String!, year: Int, ageLimit: Int, rating: Int, synopsis: String): Movie!
+}
