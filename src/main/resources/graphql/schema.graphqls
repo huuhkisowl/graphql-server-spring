@@ -32,7 +32,7 @@ type Query {
 	movies: [Movie]
 	movie(term: String!): [Movie]
 	actors: [Actors]
-	directors: [Director]
+	director: Director
 	genres: [Genres]!
 }
 
