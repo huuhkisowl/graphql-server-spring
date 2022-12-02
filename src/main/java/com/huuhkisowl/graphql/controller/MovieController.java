@@ -48,6 +48,7 @@ public class MovieController {
         return movieRepository.findAll();
     }
 	
+	// Data fetcher
 	@SchemaMapping
     public List<Genre> genres(Movie movie) {
         return genreRepository.findByIdIn(movie.getGenresIds());
@@ -63,6 +64,7 @@ public class MovieController {
         Optional<Director> optionalEnitry = directorRepository.findById(movie.getDirectorId());
 		return optionalEnitry.get();
     }
+	//-- Data fetcher
 	
 	@QueryMapping
     public List<Movie> movie(@Argument String term) {
