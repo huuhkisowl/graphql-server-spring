@@ -1,4 +1,4 @@
-package com.huuhkisowl.graphql.movieDetails;
+package com.huuhkisowl.graphql;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
