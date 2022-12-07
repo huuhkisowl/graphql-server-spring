@@ -82,30 +82,37 @@ public class MovieController {
 		return new ArrayList<>();
     }
 	
-	@MutationMapping
-	public Movie createMovie(@Argument String name, @Argument Integer year, @Argument Integer ageLimit, @Argument Integer rating, @Argument String synopsis) {
-		Movie newMovie = new Movie();
-		newMovie.setName(name);
+	@QueryMapping
+    public List<Movie> moviesByGenreId(@Argument String id) {
 		
-		if(year!=null) {
-			newMovie.setYear(year);
-		}
+		if (id != null && !id.isEmpty())
+			return movieRepository.findByGenreId(id);
 		
-		if(ageLimit!=null) {
-			newMovie.setAgeLimit(ageLimit);
-		}
-		
-		if(rating!=null) {
-			newMovie.setRating(rating);
-		}
-		
-		if(synopsis!=null) {
-			newMovie.setSynopsis(synopsis);
-		}
-		
-		movieRepository.save(newMovie);
-		return newMovie;
-	}
+		return new ArrayList<>();
+    }
 	
+	@QueryMapping
+    public List<Movie> moviesByActorId(@Argument String id) {
+		
+		if (id != null && !id.isEmpty())
+			return movieRepository.findByActorId(id);
+		
+		return new ArrayList<>();
+    }
+	
+	@QueryMapping
+    public List<Movie> moviesByDirectorId(@Argument String id) {
+		
+		if (id != null && !id.isEmpty())
+			return movieRepository.findByDirectorId(id);
+		
+		return new ArrayList<>();
+    }
+	
+	
+	@MutationMapping
+	public Movie createMovie(@Argument(name = "movie") Movie movie) {
+		return movieRepository.save(movie);
+	}
 	
 }

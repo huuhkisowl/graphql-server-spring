@@ -1,13 +1,13 @@
 
 type Movie {
 	id: String
-	name: String
-	year: Int!
-	genres: [Genres]!
-	ageLimit: Int!
-	rating: Int!
-	actors: [Actors]!
-	director: Director!
+	name: String!
+	year: Int
+	genres: [Genres]
+	ageLimit: Int
+	rating: Int
+	actors: [Actors]
+	director: Director
 	synopsis: String!
 }
 
@@ -29,13 +29,46 @@ type Genres {
 }
 
 type Query {
-	movies: [Movie]
-	movie(term: String): [Movie]!
-	actors: [Actors]
-	director: [Director]
-	genres: [Genres]
+	movies: [Movie]!
+	movie(term: String!): [Movie]!
+	moviesByGenreId(id: String!): [Movie]!
+	moviesByActorId(id: String!): [Movie]!
+	moviesByDirectorId(id: String!): [Movie]!
+	actors: [Actors]!
+	actor(term: String!): [Actors]!
+	directors: [Director]!
+	director(term: String!): [Director]!
+	genres: [Genres]!
 }
 
 type Mutation {
-	createMovie(name: String, year: Int!, ageLimit: Int!, rating: Int!, synopsis: String!): Movie!
+	createMovie(movie: movieInput!): Movie!
+	createGenre(genre: genreInput!): Genres!
+	createActor(actor: actorInput!): Actors!
+	createDirector(director: directorInput!): Director!
+}
+
+input movieInput {
+	name: String!
+	year: Int
+	ageLimit: Int
+	rating: Int
+	synopsis: String!
+	genres: [String]
+	actors: [String]
+	director: String
+}
+
+input genreInput {
+	genre: String!
+}
+
+input actorInput {
+	firstName: String
+  	lastName: String!
+}
+
+input directorInput {
+	firstName: String
+  	lastName: String!
 }
