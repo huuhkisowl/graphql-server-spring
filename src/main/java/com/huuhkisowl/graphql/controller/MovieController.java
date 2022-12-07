@@ -61,7 +61,10 @@ public class MovieController {
 	
 	@SchemaMapping
     public Director director(Movie movie) {
-        Optional<Director> optionalEnitry = directorRepository.findById(movie.getDirectorId());
+		if(movie.getDirectorId() == null)
+			return null;
+		
+		Optional<Director> optionalEnitry = directorRepository.findById(movie.getDirectorId());
 		return optionalEnitry.get();
     }
 	//-- Data fetcher
