@@ -54,9 +54,9 @@ input movieInput {
 	ageLimit: Int
 	rating: Int
 	synopsis: String!
-	genres: [String]
-	actors: [String]
-	director: String
+	genresIds: [String]
+	actorsIds: [String]
+	directorId: String
 }
 
 input genreInput {
