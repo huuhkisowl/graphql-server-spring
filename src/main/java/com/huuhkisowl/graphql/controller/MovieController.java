@@ -61,7 +61,7 @@ public class MovieController {
 	
 	@SchemaMapping
     public Director director(Movie movie) {
-		if(movie.getDirectorId() == null)
+		if(movie.getDirectorId() == null || movie.getDirectorId().isEmpty())
 			return null;
 		
 		Optional<Director> optionalEnitry = directorRepository.findById(movie.getDirectorId());
